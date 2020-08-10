@@ -12,6 +12,7 @@ class BankAccount
   end
 
   def withdraw(amount)
+    fail "Insufficient funds available" if amount > @balance
     @balance -= amount
     @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, 0, #{@balance}")
   end

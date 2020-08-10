@@ -30,9 +30,8 @@ describe BankAccount do
       expect(subject.balance).to eq(500)
     end
 
-    it "is stored in transaction array with the time and balance" do
-      subject.withdraw(500)
-      expect(subject.transaction).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 500, 0, -500"])
+    it 'raises an error when credit is higher than debit' do
+      expect{ subject.withdraw(500) }.to raise_error "Insufficient funds available"
     end
 
   end
@@ -45,6 +44,8 @@ describe BankAccount do
     end
 
   end
+
+
 
 
 
