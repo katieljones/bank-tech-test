@@ -17,7 +17,7 @@ describe BankAccount do
 
     it "is stored in transaction array with the time and balance" do
       subject.deposit(1000)
-      expect(subject.transaction).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 1000, 1000"])
+      expect(subject.transaction).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 0, 1000, 1000"])
     end
 
   end
@@ -32,7 +32,7 @@ describe BankAccount do
 
     it "is stored in transaction array with the time and balance" do
       subject.withdraw(500)
-      expect(subject.transaction).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 500, -500"])
+      expect(subject.transaction).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 500, 0, -500"])
     end
 
   end
@@ -41,7 +41,7 @@ describe BankAccount do
     it 'returns a list of all transactions' do
       subject.deposit(10)
       subject.deposit(100)
-      expect(subject.print_statement).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 10, 10", "#{Time.now.strftime("%d/%m/%Y")}, 100, 110"])
+      expect(subject.print_statement).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 0, 10, 10", "#{Time.now.strftime("%d/%m/%Y")}, 0, 100, 110"])
     end
 
   end

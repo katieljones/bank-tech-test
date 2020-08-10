@@ -8,12 +8,12 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, 0, #{amount}, #{@balance}")
   end
 
   def withdraw(amount)
     @balance -= amount
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, 0, #{@balance}")
   end
 
   def print_statement
