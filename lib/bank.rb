@@ -1,8 +1,6 @@
 class BankAccount
   attr_reader :balance, :transaction
 
-  TIME = Time.now.strftime("%d/%m/%Y")
-
   def initialize
     @balance = 0
     @transaction = []
@@ -10,12 +8,12 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    @transaction.push("#{TIME}, #{amount}, #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, #{@balance}")
   end
 
   def withdraw(amount)
     @balance -= amount
-    @transaction.push("#{TIME}, #{amount}, #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, #{@balance}")
   end
 
 
