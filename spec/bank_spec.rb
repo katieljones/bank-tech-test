@@ -15,6 +15,11 @@ describe BankAccount do
       expect(subject.balance).to eq(1000)
     end
 
+    it "is stored in transaction array with the time and balance" do
+      subject.deposit(1000)
+      expect(subject.transaction).to eq(["#{BankAccount::TIME}, 1000, 1000"])
+    end
+
   end
 
   describe "# withdraw" do
@@ -26,5 +31,10 @@ describe BankAccount do
     end
 
   end
+
+
+
+
+
 
 end
