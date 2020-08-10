@@ -15,8 +15,8 @@ class BankAccount
 
   def withdraw(amount)
     @balance -= amount
+    @transaction.push("#{TIME}, #{amount}, #{@balance}")
   end
-
 
 
 end
