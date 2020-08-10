@@ -37,6 +37,14 @@ describe BankAccount do
 
   end
 
+  describe "# prints statement" do
+    it 'returns a list of all transactions' do
+      subject.deposit(10)
+      subject.deposit(100)
+      expect(subject.print_statement).to eq(["#{Time.now.strftime("%d/%m/%Y")}, 10, 10", "#{Time.now.strftime("%d/%m/%Y")}, 100, 110"])
+    end
+
+  end
 
 
 

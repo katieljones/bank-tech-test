@@ -16,5 +16,11 @@ class BankAccount
     @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, #{@balance}")
   end
 
+  def print_statement
+    @transaction[0..-1]
+  end
+
+
+
 
 end
