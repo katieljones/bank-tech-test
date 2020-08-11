@@ -1,50 +1,31 @@
 require_relative 'statement'
+require_relative 'transaction'
+
 
 class BankAccount
 
-  attr_reader :balance, :transactions, :statement
+  attr_reader :balance, :transactions, :transaction, :statement
 
-  def initialize(statement)
-    @balance = 0
-    @transactions = []
+  def initialize(statement, transaction)
     @statement = statement
+    @transaction = transaction
   end
 
   def deposit(debit)
-    balance_increase(debit)
-    add_deposit_transaction(debit)
+    transaction.deposit(debit)
+
   end
 
   def withdraw(credit)
-    guard(credit)
-    balance_decrease(credit)
-    add_withdraw_transaction(credit)
+    transaction.withdraw(credit)
   end
 
   def print_statement
-    statement.print(transactions)
+    statement.print(transaction.transactions)
   end
 
   private
 
-  def balance_increase(debit)
-    @balance += debit
-  end
 
-  def balance_decrease(credit)
-    @balance -= credit
-  end
-
-  def add_deposit_transaction(debit)
-    @transactions.push("#{Time.now.strftime("%d/%m/%Y")}, ---- , #{debit}.00, #{@balance}.00")
-  end
-
-  def add_withdraw_transaction(credit)
-    @transactions.push("#{Time.now.strftime("%d/%m/%Y")}, #{credit}.00, ----- , #{@balance}.00")
-  end
-
-  def guard(credit)
-    fail "Insufficient funds available" if credit > @balance
-  end
 
 end
