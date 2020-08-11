@@ -1,7 +1,7 @@
 *Bank Tech test*
+---
 A practice test delivered at Makers Academy, focused on the production of best practice code, obeying the principles of OO Design and TDD.
 
-**Specification**
 **Requirements**
 ----
  - You should be able to interact with your code via a REPL like IRB or the JavaScript console.
@@ -24,11 +24,11 @@ bundle install
 
 **Acceptance criteria**
 ----
-Given a client makes a deposit of 1000 on 10-01-2012
-And a deposit of 2000 on 13-01-2012
-And a withdrawal of 500 on 14-01-2012
-When she prints her bank statement
-Then she would see
+Given a client makes a deposit of 1000 on 10-01-2012\
+And a deposit of 2000 on 13-01-2012\
+And a withdrawal of 500 on 14-01-2012\
+When she prints her bank statement\
+Then she would see\
 ```
 date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00

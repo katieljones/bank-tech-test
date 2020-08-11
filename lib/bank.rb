@@ -10,15 +10,15 @@ class BankAccount
     @statement = statement
   end
 
-  def deposit(amount)
-    balance_incrase(amount)
-    add_deposit_transaction(amount)
+  def deposit(debit)
+    balance_incrase(debit)
+    add_deposit_transaction(debit)
   end
 
-  def withdraw(amount)
-    guard(amount)
-    balance_decrease(amount)
-    add_withdraw_transaction(amount)
+  def withdraw(credit)
+    guard(credit)
+    balance_decrease(credit)
+    add_withdraw_transaction(credit)
   end
 
   def print_statement
@@ -27,24 +27,24 @@ class BankAccount
 
   private
 
-  def balance_incrase(amount)
-    @balance += amount
+  def balance_incrase(debit)
+    @balance += debit
   end
 
-  def balance_decrease(amount)
-    @balance -= amount
+  def balance_decrease(credit)
+    @balance -= credit
   end
 
-  def add_deposit_transaction(amount)
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, ---- , #{amount}.00, #{@balance}.00")
+  def add_deposit_transaction(debit)
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, ---- , #{debit}.00, #{@balance}.00")
   end
 
-  def add_withdraw_transaction(amount)
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}.00, ----- , #{@balance}.00")
+  def add_withdraw_transaction(credit)
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{credit}.00, ----- , #{@balance}.00")
   end
 
-  def guard(amount)
-    fail "Insufficient funds available" if amount > @balance
+  def guard(credit)
+    fail "Insufficient funds available" if credit > @balance
   end
 
 end
