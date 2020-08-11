@@ -11,18 +11,17 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, , #{amount}, #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, , #{amount}.00, #{@balance}.00")
   end
 
   def withdraw(amount)
     fail "Insufficient funds available" if amount > @balance
     @balance -= amount
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, , #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}.00, , #{@balance}.00")
   end
 
-  def print_statement
-    Statement.new.print
-    @transaction.map { |s| puts s.gsub(",","||") }
+  def print_statement(statement = Statement.new)
+    statement.print(transaction)
   end
 
 
