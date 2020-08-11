@@ -36,11 +36,11 @@ class BankAccount
   end
 
   def add_deposit_transaction(amount)
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, , #{amount}.00, #{@balance}.00")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, ---- , #{amount}.00, #{@balance}.00")
   end
 
   def add_withdraw_transaction(amount)
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}.00, , #{@balance}.00")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}.00, ----- , #{@balance}.00")
   end
 
   def guard(amount)
