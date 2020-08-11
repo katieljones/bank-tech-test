@@ -1,8 +1,9 @@
-#Bank Tech test
+*Bank Tech test*
 A practice test delivered at Makers Academy, focused on the production of best practice code, obeying the principles of OO Design and TDD.
 
-##Specification
+**Specification**
 **Requirements**
+----
  - You should be able to interact with your code via a REPL like IRB or the JavaScript console.
    (You don't need to implement a command line interface that takes input from STDIN.)
 -  Deposits, withdrawal.
@@ -10,6 +11,7 @@ A practice test delivered at Makers Academy, focused on the production of best p
 -  Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 **Installation**
+----
 From the command line, clone this repository to your machine:
 
 ```
@@ -21,6 +23,7 @@ bundle install
 ```
 
 **Acceptance criteria**
+----
 Given a client makes a deposit of 1000 on 10-01-2012
 And a deposit of 2000 on 13-01-2012
 And a withdrawal of 500 on 14-01-2012
@@ -81,6 +84,7 @@ account.print_statement
  ```
 
  **Testing Quality**
+ ----
  All tests were written using Rspec
  To run the tests, run the command below from the root folder:
  ```
