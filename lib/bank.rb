@@ -2,11 +2,11 @@ require_relative 'statement'
 
 class BankAccount
 
-  attr_reader :balance, :transaction, :statement
+  attr_reader :balance, :transactions, :statement
 
   def initialize(statement)
     @balance = 0
-    @transaction = []
+    @transactions = []
     @statement = statement
   end
 
@@ -22,7 +22,7 @@ class BankAccount
   end
 
   def print_statement
-    statement.print(transaction)
+    statement.print(transactions)
   end
 
   private
@@ -36,11 +36,11 @@ class BankAccount
   end
 
   def add_deposit_transaction(debit)
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, ---- , #{debit}.00, #{@balance}.00")
+    @transactions.push("#{Time.now.strftime("%d/%m/%Y")}, ---- , #{debit}.00, #{@balance}.00")
   end
 
   def add_withdraw_transaction(credit)
-    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{credit}.00, ----- , #{@balance}.00")
+    @transactions.push("#{Time.now.strftime("%d/%m/%Y")}, #{credit}.00, ----- , #{@balance}.00")
   end
 
   def guard(credit)

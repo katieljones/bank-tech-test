@@ -19,7 +19,7 @@ describe BankAccount do
 
     it "is stored in transaction array with the time and balance" do
       subject.deposit(1000)
-      expect(bank_account.transaction).to eq(["#{Time.now.strftime("%d/%m/%Y")}, ---- , 1000.00, 1000.00"])
+      expect(bank_account.transactions).to eq(["#{Time.now.strftime("%d/%m/%Y")}, ---- , 1000.00, 1000.00"])
     end
 
   end

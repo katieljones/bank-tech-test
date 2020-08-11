@@ -1,8 +1,8 @@
 class Statement
 
-  def print(transaction)
+  def print(transactions)
     head
-    transaction.reverse_each { |s| puts s.gsub(",","||") }
+    transactions.reverse_each { |s| puts s.gsub(",","||") }
   end
 
   def head
