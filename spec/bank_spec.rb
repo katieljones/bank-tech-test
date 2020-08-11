@@ -1,6 +1,8 @@
 require 'bank'
 
 describe BankAccount do
+  subject(:bank_account) { BankAccount.new(statement) }
+  let(:statement) { double('statement') }
 
   describe '#balance' do
     it 'should have a default balance of zero' do
@@ -35,6 +37,27 @@ describe BankAccount do
     end
 
   end
+
+  describe "# printing of a statement" do
+
+    before do
+      allow(statement).to receive(:print)
+    end
+
+    it 'calls the print method on statements' do
+      subject.print_statement
+      expect(statement).to have_received(:print)
+    end
+    #
+    # it 'returns a list of all transactions' do
+    #   statement = double("statement")
+    #   expect(statement).to receive(:print)
+    #   statement.print
+    # end
+
+  end
+
+
 
 
 end
