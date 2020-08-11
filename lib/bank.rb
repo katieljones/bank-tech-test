@@ -1,4 +1,7 @@
+require_relative 'statement'
+
 class BankAccount
+
   attr_reader :balance, :transaction
 
   def initialize
@@ -8,20 +11,19 @@ class BankAccount
 
   def deposit(amount)
     @balance += amount
-    @transaction.push("date: #{Time.now.strftime("%d/%m/%Y")}, credit: 0, debit: #{amount}, balance: #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, , #{amount}, #{@balance}")
   end
 
   def withdraw(amount)
     fail "Insufficient funds available" if amount > @balance
     @balance -= amount
-    @transaction.push("date: #{Time.now.strftime("%d/%m/%Y")}, credit: #{amount}, debit: 0, balance: #{@balance}")
+    @transaction.push("#{Time.now.strftime("%d/%m/%Y")}, #{amount}, , #{@balance}")
   end
 
   def print_statement
-    @transaction[0..-1]
+    Statement.new.print
+    @transaction.map { |s| puts s.gsub(",","||") }
   end
-
-
 
 
 end

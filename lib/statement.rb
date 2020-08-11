@@ -1,2 +1,8 @@
 class Statement
-end 
+
+  def print
+    header = "date    ||credit||debit||balance"
+    puts ("#{ header }")
+  end
+
+end
