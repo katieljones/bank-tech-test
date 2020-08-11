@@ -6,7 +6,7 @@ class Statement
   end
 
   def head
-    puts "  Date    ||Credit|| Debit ||Balance"
+    return "  Date    ||Credit|| Debit ||Balance"
   end
 
 
