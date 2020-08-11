@@ -48,7 +48,7 @@ describe BankAccount do
       subject.print_statement
       expect(statement).to have_received(:print)
     end
-    #
+    
     # it 'returns a list of all transactions' do
     #   statement = double("statement")
     #   expect(statement).to receive(:print)
