@@ -11,7 +11,7 @@ class BankAccount
   end
 
   def deposit(debit)
-    balance_incrase(debit)
+    balance_increase(debit)
     add_deposit_transaction(debit)
   end
 
@@ -27,7 +27,7 @@ class BankAccount
 
   private
 
-  def balance_incrase(debit)
+  def balance_increase(debit)
     @balance += debit
   end
 
