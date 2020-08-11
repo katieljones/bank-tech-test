@@ -8,5 +8,5 @@ group :development, :test do
   gem "rspec"
   gem 'spring', '1.6.4'
   gem "rubocop"
-  gem 'simplecov', require: false
+  gem 'simplecov', require: false, group: :test
 end
