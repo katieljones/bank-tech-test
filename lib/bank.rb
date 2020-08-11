@@ -13,7 +13,6 @@ class BankAccount
 
   def deposit(debit)
     transaction.deposit(debit)
-
   end
 
   def withdraw(credit)
@@ -23,9 +22,5 @@ class BankAccount
   def print_statement
     statement.print(transaction.transactions)
   end
-
-  private
-
-
 
 end
