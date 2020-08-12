@@ -68,7 +68,7 @@ TDD principles were followed from the outset using the Red, Green Refactor appro
 require './lib/bank.rb'
 
 # Create a new bank account, and perform some transactions
-account = BankAccount.new(Statement.new)
+account = BankAccount.new(Statement.new, Transaction.new)
 account.deposit(100)
 account.withdraw(10)
 
@@ -81,6 +81,9 @@ account.print_statement
  21/06/18 ||  10.00  ||  ------  || 90
  21/06/18 || ------  ||  100.00  || 100
  ```
+ **My Approach**
+ ----
+ My approach closely followed TDD and feature testing in IRB as shown above. I started running into difficulty when extracting the statement class. This was because it relied on Transactions. From here, I decided to create doubles and implemented some unit tests to test whether the class could receive the methods.
 
  **Testing Quality**
  ----
