@@ -78,8 +78,8 @@ account.print_statement
 
 # =>
  Date     || Credit  ||  Debit   || Balance
- 21/06/18 ||  10.00  ||  ------  || 90
- 21/06/18 || ------  ||  100.00  || 100
+ 21/06/18 ||  10.00  ||          || 90
+ 21/06/18 ||         ||  100.00  || 100
  ```
  **My Approach**
  ----
@@ -87,7 +87,7 @@ account.print_statement
 
  **Testing Quality**
  ----
- All tests were written using Rspec
+ All tests were written using Rspec and have 100% test coverage
  To run the tests, run the command below from the root folder:
  ```
  rspec

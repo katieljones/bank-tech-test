@@ -5,8 +5,7 @@ describe BankAccount do
   let(:statement) { double('statement') }
   let(:transaction) { double('transaction') }
 
-
-  describe "# deposit" do
+  describe '# deposit' do
     it 'calls the deposit method on transaction class' do
       allow(transaction).to receive(:deposit)
       bank_account.deposit(10)
@@ -14,16 +13,15 @@ describe BankAccount do
     end
   end
 
-  describe "# withdraw" do
+  describe '# withdraw' do
     it 'calls the withdraw method on transaction class' do
       allow(transaction).to receive(:withdraw)
       bank_account.withdraw(10)
       expect(transaction).to have_received(:withdraw)
     end
-
   end
 
-  describe "# printing of a statement" do
+  describe '# printing of a statement' do
     before do
       allow(statement).to receive(:print)
       allow(transaction).to receive(:transactions)
@@ -38,11 +36,5 @@ describe BankAccount do
       bank_account.print_statement
       expect(transaction).to have_received(:transactions)
     end
-
-
   end
-
-
-
-
 end
