@@ -9,18 +9,6 @@ A practice test delivered at Makers Academy, focused on the production of best p
 -  Account statement (date, amount, balance) printing.
 -  Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-**Installation**
-----
-From the command line, clone this repository to your machine:
-
-```
-git clone https://github.com/katieljones/bank-tech-test.git
-```
-once cloned to your machine, install the ruby gems:
-```
-bundle install
-```
-
 **Acceptance criteria**
 ----
 Given a client makes a deposit of 1000 on 10-01-2012\
@@ -61,9 +49,20 @@ I'd like to be able to view my bank statement.
 
 TDD principles were followed from the outset using the Red, Green Refactor approach.
 
-**Running the code in IRB**
+**Installation Instructions**
+----
+From the command line, clone this repository to your machine:
 
 ```
+$ git clone https://github.com/katieljones/bank-tech-test.git
+$ cd bank_test
+$ bundle install
+```
+
+**Running Code in REPL**
+
+```
+$ irb
 # Load the file
 require './lib/bank.rb'
 
@@ -71,7 +70,6 @@ require './lib/bank.rb'
 account = BankAccount.new(Statement.new, Transaction.new)
 account.deposit(100)
 account.withdraw(10)
-
 
 # Review your bank statement
 account.print_statement
@@ -90,6 +88,11 @@ account.print_statement
  All tests were written using Rspec and have 100% test coverage
  To run the tests, run the command below from the root folder:
  ```
- rspec
+ $ rspec
 
+ ```
+
+ **Run Code Linter**
+ ```
+ $ rubocop
  ```
