@@ -13,13 +13,13 @@ class BankAccount
 
   def deposit(debit)
     @balance += debit
-    add_deposit_transaction(debit)
+    create_deposit_transaction(debit)
   end
 
   def withdraw(credit)
     insufficient_funds_guard(credit)
     @balance -= credit
-    add_withdraw_transaction(credit)
+    create_withdraw_transaction(credit)
   end
 
   def print_statement
@@ -28,11 +28,11 @@ class BankAccount
 
   private
 
-  def add_deposit_transaction(debit)
+  def create_deposit_transaction(debit)
     @transactions.push("#{Time.now.strftime('%d/%m/%Y')},      , #{debit}.00, #{@balance}.00")
   end
 
-  def add_withdraw_transaction(credit)
+  def create_withdraw_transaction(credit)
     @transactions.push("#{Time.now.strftime('%d/%m/%Y')}, #{credit}.00,       , #{@balance}.00")
   end
 
