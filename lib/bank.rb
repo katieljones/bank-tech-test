@@ -29,11 +29,11 @@ class BankAccount
   private
 
   def create_deposit_transaction(debit)
-    @transactions.push("#{Time.now.strftime('%d/%m/%Y')},      , #{debit}.00, #{@balance}.00")
+    @transactions.push("#{Time.now.strftime('%d/%m/%Y')},      , #{'%.2f'%debit}, #{'%.2f'%balance}")
   end
 
   def create_withdraw_transaction(credit)
-    @transactions.push("#{Time.now.strftime('%d/%m/%Y')}, #{credit}.00,       , #{@balance}.00")
+    @transactions.push("#{Time.now.strftime('%d/%m/%Y')}, #{'%.2f'%credit},       , #{'%.2f'%balance}")
   end
 
   def insufficient_funds_guard(credit)
